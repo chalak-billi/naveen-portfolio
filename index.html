@@ -2,363 +2,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Naveen's personal portfolio — aspiring developer, creative thinker, and builder.">
-  <title>Naveen | Developer Portfolio</title>
-  <style>
-    :root {
-      --bg: #080b12;
-      --panel: #101622;
-      --text: #f4f7ff;
-      --muted: #9ba7bb;
-      --blue: #66a6ff;
-      --border: #202b3d;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen | Portfolio</title>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <style>
+        /* 1. Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, sans-serif;
-      line-height: 1.7;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #080d16;
+            color: #f5f7ff;
+            line-height: 1.6;
+        }
 
-    a { color: inherit; text-decoration: none; }
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-    .container { width: min(1080px, 90%); margin: auto; }
+      .profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #3997ff;
+    margin-bottom: 20px;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8, 11, 18, .88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    nav {
-      min-height: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+        .blue {
+            color: #3997ff;
+        }
 
-    .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -1px; }
-    .logo span, .accent { color: var(--blue); }
+        /* 2. Navigation bar */
+        header {
+            border-bottom: 1px solid #1e293b;
+            padding: 18px 0;
+        }
 
-    .nav-links { display: flex; gap: 25px; list-style: none; }
-    .nav-links a { color: var(--muted); font-size: .9rem; }
-    .nav-links a:hover { color: white; }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .hero {
-      min-height: 77vh;
-      display: flex;
-      align-items: center;
-      padding: 90px 0;
-      background: radial-gradient(ellipse at 80% 30%, #142544 0%, transparent 48%);
-    }
+        nav h2 {
+            font-size: 24px;
+        }
 
-    .eyebrow {
-      display: inline-block;
-      border: 1px solid #29476d;
-      background: #101e32;
-      color: #a9ceff;
-      padding: 6px 12px;
-      border-radius: 99px;
-      font-size: .8rem;
-      margin-bottom: 22px;
-    }
+        nav ul {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+        }
 
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      line-height: 1.07;
-      letter-spacing: -4px;
-      max-width: 800px;
-    }
+        nav a:hover {
+            color: #3997ff;
+        }
 
-    .hero p {
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin: 25px 0 30px;
-    }
+        /* 3. Introduction section */
+        .hero {
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 70px 0;
+            background: radial-gradient(
+                circle at 80% 40%,
+                #14284a,
+                #080d16 55%
+            );
+        }
 
-    .actions { display: flex; gap: 13px; flex-wrap: wrap; }
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 64px);
+            line-height: 1.15;
+            margin: 12px 0;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 9px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      transition: transform .2s, background .2s;
-    }
+        .hero h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #b8c6dc;
+        }
 
-    .btn:hover { transform: translateY(-3px); }
-    .btn-primary { background: var(--blue); color: #07101e; border-color: var(--blue); }
-    .btn-secondary { background: #101622; }
+        .hero p {
+            max-width: 570px;
+            color: #aab6c9;
+            margin: 18px 0 25px;
+        }
 
-    section { padding: 85px 0; scroll-margin-top: 65px; }
+        .button {
+            display: inline-block;
+            background-color: #2589ff;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 7px;
+            margin-right: 10px;
+        }
 
-    .section-label {
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .78rem;
-      font-weight: 800;
-    }
+        .button:hover {
+            background-color: #0869db;
+        }
 
-    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -1.5px; margin: 8px 0 14px; }
-    .section-intro { color: var(--muted); max-width: 650px; margin-bottom: 32px; }
+        .outline {
+            background-color: transparent;
+            border: 1px solid #536782;
+        }
 
-    .about-grid, .project-grid, .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
+        /* 4. Common section styling */
+        section {
+            padding: 55px 0;
+            border-bottom: 1px solid #1e293b;
+        }
 
-    .card {
-      background: linear-gradient(145deg, #121a29, #0c111b);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 26px;
-      transition: border-color .2s, transform .2s;
-    }
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
 
-    .card:hover { border-color: #426ba2; transform: translateY(-4px); }
-    .card h3 { margin-bottom: 9px; font-size: 1.15rem; }
-    .card p { color: var(--muted); font-size: .95rem; }
+        .description {
+            color: #aab6c9;
+            margin-bottom: 24px;
+        }
 
-    .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        /* 5. About section */
+        .about-box {
+            background-color: #101827;
+            border: 1px solid #25344a;
+            padding: 24px;
+            border-radius: 12px;
+        }
 
-    .project-number { color: var(--blue); font-size: .85rem; margin-bottom: 18px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+        /* 6. Skills and project cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
 
-    .tag {
-      font-size: .75rem;
-      color: #c4d9f7;
-      background: #18263a;
-      border: 1px solid #263b57;
-      padding: 4px 9px;
-      border-radius: 6px;
-    }
+        .card {
+            background-color: #101827;
+            border: 1px solid #25344a;
+            padding: 20px;
+            border-radius: 12px;
+        }
 
-    .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .skill { text-align: center; font-weight: 650; }
+        .card h3 {
+            margin-bottom: 8px;
+        }
 
-    .contact-box {
-      padding: 40px;
-      text-align: center;
-      border-radius: 20px;
-      border: 1px solid #29476d;
-      background: radial-gradient(ellipse at top, #142544, #0d121c 70%);
-    }
+        .card p {
+            color: #aab6c9;
+            font-size: 14px;
+        }
 
-    .contact-box p { color: var(--muted); margin: 10px auto 25px; max-width: 540px; }
+        .card:hover {
+            border-color: #3997ff;
+        }
 
-    footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .85rem;
-    }
+        /* 7. Contact section */
+        .contact {
+            text-align: center;
+        }
 
-    .footer-inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .contact p {
+            color: #aab6c9;
+            margin: 12px 0 22px;
+        }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+        /* 8. Footer */
+        footer {
+            padding: 22px 0;
+            color: #8998ae;
+            font-size: 13px;
+            text-align: center;
+        }
 
-    @media (max-width: 760px) {
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: .8rem; }
-      .project-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-grid { grid-template-columns: 1fr; }
-      h1 { letter-spacing: -2px; }
-      .hero { min-height: auto; padding: 90px 0; }
-      section { padding: 65px 0; }
-      .contact-box { padding: 28px 18px; }
-    }
+        /* 9. Mobile-friendly layout */
+        @media (max-width: 650px) {
+            .container {
+                width: 90%;
+            }
 
-    @media (max-width: 390px) {
-      .logo { font-size: 1.1rem; }
-      .nav-links { gap: 8px; }
-      .nav-links a { font-size: .74rem; }
-    }
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
-    }
-  </style>
+            nav ul {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <nav class="container">
-      <a class="logo" href="#home">N<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Navigation bar -->
+    <header>
+        <nav class="container">
+            <h2>N<span class="blue">.</span></h2>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container reveal">
-        <span class="eyebrow">Student · Aspiring Developer</span>
-        <h1>Hey, I'm Naveen.<br>I build things for the <span class="accent">digital world.</span></h1>
-        <p>
-          I'm a student exploring technology, creative problem-solving,
-          and entrepreneurship. I enjoy turning ideas into projects
-          and learning something new with every build.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#projects">Explore my work ↗</a>
-          <a class="btn btn-secondary" href="#contact">Get in touch</a>
-        </div>
-      </div>
-    </section>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="about">
-      <div class="container reveal">
-        <span class="section-label">A little about me</span>
-        <h2>Curious by nature.<br>Builder by choice.</h2>
-        <p class="section-intro">
-          I'm at the beginning of my journey in technology, and I'm excited
-          to learn by building real things rather than just reading about them.
-        </p>
-        <div class="about-grid">
-          <article class="card">
-            <h3>💻 Technology</h3>
-            <p>Learning web development, programming fundamentals, and how digital products work.</p>
-          </article>
-          <article class="card">
-            <h3>🎬 Creativity</h3>
-            <p>Interested in filmmaking, visual storytelling, design, and creative experimentation.</p>
-          </article>
-          <article class="card">
-            <h3>🚀 Entrepreneurship</h3>
-            <p>Exploring startup ideas, understanding users, and finding practical solutions to everyday problems.</p>
-          </article>
-          <article class="card">
-            <h3>📚 Growth mindset</h3>
-            <p>Focused on learning consistently, collaborating with people, and improving through experience.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- Introduction -->
+    <main>
+        <section class="hero" id="home">
+          <div class="container">
+            <img
+    src=".png"
+    alt="Photo of Naveen"
+    class="profile-photo"
+>
+          
+            <div class="container">
+                <p class="blue">HELLO, WELCOME TO MY PORTFOLIO</p>
 
-    <section id="skills">
-      <div class="container reveal">
-        <span class="section-label">What I'm learning</span>
-        <h2>My learning toolkit</h2>
-        <p class="section-intro">
-          Skills I'm developing as I build my foundation in technology.
-          I'll keep updating this section as I grow.
-        </p>
-        <div class="skills-grid">
-          <div class="card skill">HTML5</div>
-          <div class="card skill">CSS3</div>
-          <div class="card skill">JavaScript</div>
-          <div class="card skill">Git & GitHub</div>
-          <div class="card skill">Python basics</div>
-          <div class="card skill">Responsive design</div>
-          <div class="card skill">Problem-solving</div>
-          <div class="card skill">Creative thinking</div>
-        </div>
-      </div>
-    </section>
+                <h1>Hi, I'm <span class="blue">Naveen.</span></h1>
 
-    <section id="projects">
-      <div class="container reveal">
-        <span class="section-label">Selected ideas</span>
-        <h2>Projects & experiments</h2>
-        <p class="section-intro">
-          A few concepts that reflect my interests. These are early-stage
-          ideas, not claims of finished or launched products.
-        </p>
-        <div class="project-grid">
-          <article class="card">
-            <div class="project-number">PROJECT 01 / CONCEPT</div>
-            <h3>HookMe</h3>
-            <p>A quick-match dating app concept designed around short conversations and spontaneous connections.</p>
-            <div class="tags">
-              <span class="tag">Product Design</span>
-              <span class="tag">Social App</span>
+                <h3>Student | Aspiring Developer | Creative Thinker</h3>
+
+                <p>
+                    I'm exploring technology, creativity and entrepreneurship.
+                    I enjoy learning new skills, building projects and
+                    turning ideas into practical solutions.
+                </p>
+
+                <a href="#projects" class="button">View My Work</a>
+                <a href="#contact" class="button outline">Contact Me</a>
             </div>
-          </article>
-          <article class="card">
-            <div class="project-number">PROJECT 02 / CONCEPT</div>
-            <h3>Novhere</h3>
-            <p>An exploration and travel concept for discovering interesting places and connecting with fellow explorers.</p>
-            <div class="tags">
-              <span class="tag">Discovery</span>
-              <span class="tag">Community</span>
+        </section>
+
+        <!-- About me -->
+        <section id="about">
+            <div class="container">
+                <h2>About <span class="blue">Me</span></h2>
+
+                <div class="about-box">
+                    <p>
+                        I'm a student interested in web development,
+                        filmmaking and innovative ideas. I believe in
+                        learning by doing and improving through experience.
+                        My goal is to develop useful technical skills
+                        and build projects that solve real problems.
+                    </p>
+                </div>
             </div>
-          </article>
-          <article class="card">
-            <div class="project-number">PROJECT 03 / FIRST BUILD</div>
-            <h3>Personal Portfolio</h3>
-            <p>This responsive portfolio website, created to introduce myself and share my learning journey online.</p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <div class="container">
+                <h2>My <span class="blue">Skills</span></h2>
+
+                <p class="description">
+                    Technologies and skills I am learning.
+                </p>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>HTML5</h3>
+                        <p>Building the structure of web pages.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>CSS3</h3>
+                        <p>Styling websites with colors and layouts.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>JavaScript</h3>
+                        <p>Learning to add interaction to websites.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Python</h3>
+                        <p>Exploring programming fundamentals.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Git & GitHub</h3>
+                        <p>Managing code and publishing projects.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Creativity</h3>
+                        <p>Exploring design and visual storytelling.</p>
+                    </div>
+                </div>
             </div>
-          </article>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <h2>My <span class="blue">Projects</span></h2>
+
+                <p class="description">
+                    Concepts and projects that reflect my interests.
+                </p>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>HookMe</h3>
+                        <p>
+                            A dating app concept focused on quick
+                            conversations and new connections.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Novhere</h3>
+                        <p>
+                            An exploration concept for discovering
+                            places and connecting with explorers.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>My Portfolio</h3>
+                        <p>
+                            A personal website built with HTML and CSS
+                            and published using GitHub Pages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Let's <span class="blue">Connect</span></h2>
+
+                <p>
+                    I'm open to learning, collaborating and exploring
+                    new opportunities.
+                </p>
+
+                <a href="https://github.com/" class="button"
+                   target="_blank" rel="noopener noreferrer">
+                    My GitHub
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Naveen | Built with HTML and CSS</p>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <section id="contact">
-      <div class="container reveal">
-        <div class="contact-box">
-          <span class="section-label">Let's connect</span>
-          <h2>Have an idea? Let's talk.</h2>
-          <p>
-            I'm always interested in learning, meeting creative people,
-            and exploring opportunities to build something meaningful.
-          </p>
-          <a class="btn btn-primary"
-             href="https://github.com/"
-             target="_blank"
-             rel="noopener noreferrer">Find me on GitHub ↗</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Naveen</span>
-      <span>Designed with curiosity. Built for the web.</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach((element) => {
-      observer.observe(element);
-    });
-  </script>
 </body>
 </html>
